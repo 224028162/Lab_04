@@ -2,7 +2,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: black;
-    background-color: #f9f9f9;
+    background-color: #9bd7df;
     padding: 20px;
 }
 
@@ -67,7 +67,7 @@ input, select, textarea {
 
 
 button {
-    background-color: blue;
+    background-color: #9bd7df;
     color: black;
     border: none;
     padding: 15px;
@@ -87,7 +87,7 @@ button:hover {
 }
 
 .btn-remove:hover {
-    background-color: maroon;
+    background-color: rgb(122, 47, 47);
 }
 
 .cards-container {
