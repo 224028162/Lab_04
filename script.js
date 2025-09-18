@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Create student object
         const student = {
-            id: Date.now(), // Unique ID
+            id: Date.now(),
             firstName: firstName.value.trim(),
             lastName: lastName.value.trim(),
             email: email.value.trim(),
@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Remove from data store
         students = students.filter(student => student.id !== id);
         
-        // Remove from UI
+    
         const card = document.querySelector(`.card[data-id="${id}"]`);
         const tableRow = document.querySelector(`tr[data-id="${id}"]`);
         
