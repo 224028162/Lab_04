@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Registration Form</title>
+    <title>Student Registration - WAD621S Lab 4</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Student Registration</h1>
-        <p>WAD Lab_04</p>
+        <h1>Student Registration System</h1>
+        <p>WAD621S - Lab 4 Assignment</p>
     </header>
     
     <div class="container">
@@ -39,8 +39,8 @@
                     <select id="programme" name="programme" required>
                         <option value="">Select a programme</option>
                         <option value="Computer Science">Computer Science</option>
-                        <option value="Informatics">Informatics</option>
-                        <option value="Software Development">Software Development</option>
+                        <option value="Information Technology">Information Technology</option>
+                        <option value="Software Engineering">Software Engineering</option>
                         <option value="Data Science">Data Science</option>
                         <option value="Cybersecurity">Cybersecurity</option>
                     </select>
@@ -59,10 +59,15 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="interests">Interests <span aria-hidden="true">*</span></label></label>
+                    <label for="interests">Interests <span aria-hidden="true">*</span></label>
                     <textarea id="interests" name="interests" rows="3"></textarea>
                 </div>
                 
+                <div class="form-group">
+                    <label for="photo">Photo URL<span aria-hidden="true">*</span></label>
+                    <input type="url" id="photo" name="photo" placeholder="https://example.com/photo.jpg">
+                    <small class="error" id="err-photo"></small>
+                </div>
                 
                 <div aria-live="polite" class="sr-only" id="live"></div>
                 
@@ -78,7 +83,7 @@
                 </div>
             </div>
             
-            <footer><h2>Summary Table</h2>
+            <h2>Summary Table</h2>
             <table id="summaryTable">
                 <thead>
                     <tr>
@@ -96,7 +101,7 @@
             </table>
         </section>
     </div>
-</footer>
+
     <script src="script.js"></script>
 </body>
 </html>
