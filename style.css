@@ -1,48 +1,139 @@
 body {
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-line-height: 1.6;
-color: black;
-background-color: #f9f9f9;
-padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: black;
+    background-color: #f9f9f9;
+    padding: 20px;
 }
+
 header {
-text-align: center;
-margin:1%;
-padding: 10px;;
-border-bottom: 1px solid #95a5a6;
-}
-.container{
-max-width: 800px;
-margin: auto;
-padding: 20px;
-grid-template-columns: auto;
-}
- button {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        
-        button:hover {
-            background-color: #2980b9;
-        }
-
- button.remove{
-background-color: red;
-padding: 5px 10px
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid black;
 }
 
-select, input[type="text"], textarea {
+h1, h2, h3 {
+    margin-bottom: 1rem;
+    color: black;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 2rem;
+}
+
+
+.form-section, .output-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: black;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+input, select, textarea {
     width: 100%;
-    padding: 10px;
-    margin: 5px 0 15px 0;
-    border: 1px solid #ccc;
+    padding: 15px;
+    border: 1px solid black;
     border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 16px;
-    resize: none;
+    font-size: 1rem;
+}
+
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.radio-group input[type="radio"] {
+    width: auto;
+    margin-right: 0.5rem;
+}
+
+
+button {
+    background-color: blue;
+    color: black;
+    border: none;
+    padding: 15px;
+    font-size: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkblue;
+}
+
+.btn-remove {
+    background-color: rgb(183, 12, 12);
+    padding: 10px;
+    font-size: 14px;
+}
+
+.btn-remove:hover {
+    background-color: maroon;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+   border-style: solid;
+   border-color: black;
+    border-radius: 8px;
+    box-shadow: black;
+
+}
+
+.card-content {
+    padding: 5px;
+    margin: 1px;
+}
+
+.card-actions {
+    margin-top: 1rem;
+    text-align: right;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 5px;
+    text-align: left;
+    border-bottom: 1px solid black;
+}
+
+th {
+    background-color: white;
+    font-weight: 600;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 10px;
+    color: black;
 }
