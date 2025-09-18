@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab_04</title>
+    <title>Student Registration Form</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>Student Registration</h1>
-        <p>WAD - Lab_04</p>
+        <p>WAD Lab_04</p>
     </header>
     
+    <div class="container">
         <section class="form-section">
             <h2>Register Student</h2>
             <form id="regForm" novalidate>
@@ -38,8 +39,8 @@
                     <select id="programme" name="programme" required>
                         <option value="">Select a programme</option>
                         <option value="Computer Science">Computer Science</option>
-                        <option value="Information Technology">Information Technology</option>
-                        <option value="Software Engineering">Software Engineering</option>
+                        <option value="Informatics">Informatics</option>
+                        <option value="Software Development">Software Development</option>
                         <option value="Data Science">Data Science</option>
                         <option value="Cybersecurity">Cybersecurity</option>
                     </select>
@@ -62,11 +63,6 @@
                     <textarea id="interests" name="interests" rows="3"></textarea>
                 </div>
                 
-                <div class="form-group">
-                    <label for="photo">Photo URL</label>
-                    <input type="url" id="photo" name="photo" placeholder="https://example.com/photo.jpg">
-                    <small class="error" id="err-photo"></small>
-                </div>
                 
                 <div aria-live="polite" class="sr-only" id="live"></div>
                 
@@ -78,10 +74,26 @@
             <h2>Student Profiles</h2>
             <div class="cards-container" id="cards">
                 <div class="empty-state" id="empty-cards">
-                    <p>No student profiles yet. Register a student to see their profile card here.</p>
+                    <p>No student profiles yet.</p>
                 </div>
             </div>
             
+            <h2>Summary Table</h2>
+            <table id="summaryTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Programme</th>
+                        <th>Year</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="summaryTbody">
+                    <tr>
+                        <td colspan="4" class="empty-state">No students registered yet.</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
     </div>
 

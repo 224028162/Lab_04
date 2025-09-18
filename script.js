@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const programme = document.getElementById('programme');
     const yearRadios = document.querySelectorAll('input[name="year"]');
     const interests = document.getElementById('interests');
-    const photo = document.getElementById('photo');
     const liveRegion = document.getElementById('live');
     
     // Output containers
@@ -36,16 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return '';
     }
     
-    function validateUrl(value) {
-        if (!value) return ''; // Optional field
-        
-        try {
-            new URL(value);
-            return '';
-        } catch {
-            return 'Please enter a valid URL';
-        }
-    }
     
     // Field validation handlers
     function setupFieldValidation(field, validator, fieldName) {
@@ -96,8 +85,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    setupFieldValidation(photo, validateUrl, 'Photo URL');
-    
     // Show error message
     function showError(field, error) {
         const errorElement = document.getElementById(`err-${field.id}`);
@@ -121,7 +108,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const programmeError = validateRequired(programme.value, 'Programme');
         const yearSelected = document.querySelector('input[name="year"]:checked');
         const yearError = yearSelected ? '' : 'Year of study is required';
-        const photoError = validateUrl(photo.value);
         
         // Show errors
         showError(firstName, firstNameError);
@@ -141,11 +127,10 @@ document.addEventListener('DOMContentLoaded', function() {
             yearFieldset.style.padding = '0';
         }
         
-        showError(photo, photoError);
         
         // Check if there are any errors
         const hasErrors = firstNameError || lastNameError || emailError || 
-                         programmeError || yearError || photoError;
+                         programmeError || yearError;
         
         if (hasErrors) {
             liveRegion.textContent = 'Please fix the form errors before submitting';
@@ -161,7 +146,6 @@ document.addEventListener('DOMContentLoaded', function() {
             programme: programme.value,
             year: yearSelected.value,
             interests: interests.value.split(',').map(i => i.trim()).filter(i => i),
-            photo: photo.value.trim() || 'https://placehold.co/400x300?text=Student+Photo'
         };
         
         // Add to data store
@@ -203,9 +187,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         card.innerHTML = `
-            <div class="card-img">
-                <img src="${student.photo}" alt="Profile photo of ${student.firstName} ${student.lastName}">
-            </div>
             <div class="card-content">
                 <h3>${student.firstName} ${student.lastName}</h3>
                 <div>
@@ -270,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function() {
             summaryTbody.innerHTML = '<tr><td colspan="4" class="empty-state">No students registered yet</td></tr>';
         }
         
-        // Announce removal
+
         liveRegion.textContent = 'Student has been removed';
     };
 });

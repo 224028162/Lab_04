@@ -17,15 +17,32 @@ margin: auto;
 padding: 20px;
 grid-template-columns: auto;
 }
-button {
-    background-color:rgb(0, 191, 255);
-    color: rgb(0, 0, 0);
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
+ button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+
+ button.remove{
+background-color: red;
+padding: 5px 10px
 }
-button:hover {
-    background-color: rgb(0, 153, 204);
+
+select, input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    resize: none;
 }
