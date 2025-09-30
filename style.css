@@ -1,8 +1,20 @@
+:root {
+    --primary: #3498db;
+    --primary-dark: #2980b9;
+    --danger: #e74c3c;
+    --danger-dark: #c0392b;
+    --success: #2ecc71;
+    --gray: #95a5a6;
+    --light: #ecf0f1;
+    --dark: #2c3e50;
+    --shadow: black;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: black;
-    background-color:lightblue;
+    color: var(--dark);
+    background-color: lightcyan;
     padding: 20px;
 }
 
@@ -10,12 +22,12 @@ header {
     text-align: center;
     margin-bottom: 2rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--gray);
 }
 
 h1, h2, h3 {
     margin-bottom: 1rem;
-    color: black;
+    color: var(--dark);
 }
 
 .container {
@@ -26,12 +38,11 @@ h1, h2, h3 {
     gap: 2rem;
 }
 
-
 .form-section, .output-section {
     background: white;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: black;
+    box-shadow: var(--shadow);
 }
 
 .form-group {
@@ -46,17 +57,17 @@ label {
 
 input, select, textarea {
     width: 100%;
-    padding: 15px;
-    border: 1px solid black;
+    padding: 0.75rem;
+    border: 1px solid var(--gray);
     border-radius: 4px;
     font-size: 1rem;
 }
-input:focus, select:focus, textarea:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
-}
 
+.radio-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
 
 .radio-group label {
     display: flex;
@@ -70,63 +81,101 @@ input:focus, select:focus, textarea:focus {
     margin-right: 0.5rem;
 }
 
+.error {
+    color: var(--danger);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+}
 
 button {
-    background-color: #9bd7df;
-    color: black;
+    background-color: var(--primary);
+    color: white;
     border: none;
-    padding: 15px;
-    font-size: 15px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.2s;
 }
 
 button:hover {
-    background-color: darkblue;
+    background-color: var(--primary-dark);
 }
 
 .btn-remove {
-    background-color: rgb(183, 12, 12);
-    padding: 10px;
-    font-size: 14px;
+    background-color: var(--danger);
+    padding: 0.4rem 0.8rem;
+    font-size: 0.875rem;
 }
 
-.btn-remove:hover {
-    background-color: rgb(122, 47, 47);
-}
 
 .cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.5rem;
     margin-bottom: 2rem;
+    color: #000;
 }
 
 .card {
-   border-style: solid;
-   border-color: black;
-   border-radius: 8px;
-   box-shadow: black;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s;
+}
 
+.card:hover {
+    transform: translateY(-5px);
 }
-.card img {
+
+.card-img {
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-img img {
     width: 100%;
-    height: auto;
-    display: block;
-}
-#photo-preview {
-  width: 200px;       
-  height: 200px;        
-  object-fit: cover;    
-  border-radius: 60px;   
-  border: 1px solid var(--border-color);
-  box-shadow: var(--card-shadow);
-  margin-top: 10px;
+    height: 100%;
+    object-fit: cover;
 }
 
 .card-content {
-    padding: 5px;
-    margin: 1px;
+    padding: 1.5rem;
+}
+
+.card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.badge {
+    display: inline-block;
+    background-color: var(--light);
+    color: var(--dark);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.interests-list {
+    margin-top: 1rem;
+}
+
+.interests-list span {
+    display: inline-block;
+    background-color: var(--primary);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .card-actions {
@@ -134,31 +183,29 @@ button:hover {
     text-align: right;
 }
 
+.card-actions button {
+    margin-left: 0.5rem;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
+    margin-top: 1rem;
 }
 
 th, td {
-    padding: 5px;
+    padding: 0.75rem;
     text-align: left;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--gray);
 }
 
 th {
-    background-color: white;
+    background-color: var(--light);
     font-weight: 600;
 }
 
-.empty-state {
-    text-align: center;
-    padding: 10px;
-    color: black;
+tr:hover {
+    background-color: #f5f5f5;
 }
-.interests {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    margin-top: 5px;
-}
+
+
