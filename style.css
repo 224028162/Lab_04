@@ -2,7 +2,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: black;
-    background-color: #9bd7df;
+    background-color:lightblue;
     padding: 20px;
 }
 
@@ -22,7 +22,7 @@ h1, h2, h3 {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 100%;
+    grid-template-columns: 1fr;
     gap: 2rem;
 }
 
@@ -50,6 +50,11 @@ input, select, textarea {
     border: 1px solid black;
     border-radius: 4px;
     font-size: 1rem;
+}
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
 }
 
 
@@ -100,9 +105,23 @@ button:hover {
 .card {
    border-style: solid;
    border-color: black;
-    border-radius: 8px;
-    box-shadow: black;
+   border-radius: 8px;
+   box-shadow: black;
 
+}
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+#photo-preview {
+  width: 200px;       
+  height: 200px;        
+  object-fit: cover;    
+  border-radius: 60px;   
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+  margin-top: 10px;
 }
 
 .card-content {
@@ -136,4 +155,10 @@ th {
     text-align: center;
     padding: 10px;
     color: black;
+}
+.interests {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 5px;
 }
