@@ -122,11 +122,12 @@ button:hover {
 }
 
 .card {
-    background: white;
+    background: lightcyan;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: transform 0.2s;
+    border-color: black;
 }
 
 .card:hover {
