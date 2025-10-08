@@ -1,108 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WAD621S Lab 4</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Registration System</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Student Registration Form</h1>
-        <p>WAD Lab_04</p>
-    </header>
-    
-    <div class="container">
-        <section class="form-section">
-            <h2>Register Student</h2>
-            <form id="regForm" novalidate>
-                <div class="form-group">
-                    <label for="firstName">First Name <span aria-hidden="true">*</span></label>
-                    <input type="text" id="firstName" name="firstName" required>
-                    <small class="error" id="err-firstName"></small>
-                </div>
-                
-                <div class="form-group">
-                    <label for="lastName">Last Name <span aria-hidden="true">*</span></label>
-                    <input type="text" id="lastName" name="lastName" required>
-                    <small class="error" id="err-lastName"></small>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email <span aria-hidden="true">*</span></label>
-                    <input type="email" id="email" name="email" required>
-                    <small class="error" id="err-email"></small>
-                </div>
-                
-                <div class="form-group">
-                    <label for="programme">Programme <span aria-hidden="true">*</span></label>
-                    <select id="programme" name="programme" required>
-                        <option value="">Select a programme</option>
-                        <option value="Computer Science">Computer Science</option>
-                        <option value="Informatics">Informatics</option>
-                        <option value="Software Engineering">Software Engineering</option>
-                        <option value="Data Science">Data Science</option>
-                        <option value="Cybersecurity">Cybersecurity</option>
-                    </select>
-                    <small class="error" id="err-programme"></small>
-                </div>
-                
-                <div class="form-group">
-                    <label>Year of Study <span aria-hidden="true">*</span></label>
-                    <div class="radio-group">
-                        <label><input type="radio" name="year" value="1" required> 1st Year</label>
-                        <label><input type="radio" name="year" value="2"> 2nd Year</label>
-                        <label><input type="radio" name="year" value="3"> 3rd Year</label>
-                        <label><input type="radio" name="year" value="4"> 4th Year</label>
-                    </div>
-                    <small class="error" id="err-year"></small>
-                </div>
-                
-                <div class="form-group">
-                    <label for="interests">Interests</label>
-                    <textarea id="interests" name="interests" rows="3"></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label for="photo">Photo URL</label>
-                    <input type="url" id="photo" name="photo" placeholder="https://example.com/photo.jpg">
-                    <small class="error" id="err-photo"></small>
-                    <img id="photo-preview" src="" alt="Preview" style="display:none; max-width: 100px; margin-top: 10px;">
-                </div>
-                
-                <div aria-live="polite" class="sr-only" id="live"></div>
-        
-                <button type="submit">Add Student</button>
-            </form>
-        </section>
-        
-        <section class="output-section">
-            <h2>Student Profiles</h2>
-            <div class="cards-container" id="cards">
-                <div class="empty-state" id="empty-cards">
-                    <p>No student profiles yet.</p>
-                </div>
-            </div>
-            
-            <h2>Summary Table</h2>
-            <table id="summaryTable">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Programme</th>
-                        <th>Year</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody id="summaryTbody">
-                    <tr>
-                        <td colspan="4" class="empty-state">No students registered yet.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+  <section id="registrationPage">
+    <h1>Student Registration</h1>
+    <form id="regForm">
+      <label>First Name:</label>
+      <input type="text" id="firstName"/>
+      <div id="err-firstName" class="error"></div>
+
+      <label>Last Name:</label>
+      <input type="text" id="lastName"/>
+      <div id="err-lastName" class="error"></div>
+
+      <label>Email:</label>
+      <input type="email" id="email"/>
+      <div id="err-email" class="error"></div>
+
+      <label>Programme:</label>
+      <input type="text" id="programme"/>
+      <div id="err-programme" class="error"></div>
+
+      <label>Year:</label>
+      <div>
+        <label><input type="radio" name="year" value="1"> 1</label>
+        <label><input type="radio" name="year" value="2"> 2</label>
+        <label><input type="radio" name="year" value="3"> 3</label>
+      </div>
+      <div id="err-year" class="error"></div>
+
+      <label>Interests:</label>
+      <div>
+        <label><input type="checkbox" name="interests" value="Sports"> Sports</label>
+        <label><input type="checkbox" name="interests" value="Music"> Music</label>
+        <label><input type="checkbox" name="interests" value="Coding"> Coding</label>
+        <label><input type="checkbox" name="interests" value="Coding"> Cybersecurity</label>
+        <label><input type="checkbox" name="interests" value="Coding"> Game Development</label>
+        <label><input type="checkbox" name="interests" value="Coding"> Creative Writing</label>
+        <label><input type="checkbox" name="interests" value="Coding"> Entrepreneurship</label>
+        <label><input type="checkbox" name="interests" value="Coding"> Drawing</label>
+        <label><input type="checkbox" name="interests" value="Coding"> Graphic Design</label>
+      </div>
+
+      <label>Photo URL:</label>
+      <input type="text" id="photo"/>
+      <div id="err-photo" class="error"></div>
+
+      <button type="submit">Save Student</button>
+    </form>
+    <p id="successMessage" class="success">Student saved!</p>
+    <p id="liveRegion" aria-live="polite"></p>
+
+    <button id="previewResultsBtn">Preview Results</button>
+  </section>
+
+  <section id="resultsPage" class="hidden">
+    <h1>Registered Students</h1>
+    <div class="view-toggle">
+      <button id="viewCardsBtn" class="active">Card View</button>
+      <button id="viewTableBtn">Table View</button>
     </div>
 
-    <script src="script.js"></script>
+    <div id="cardsView">
+      <div id="cardsContainer" class="card-container"></div>
+    </div>
+    <div id="tableView" class="hidden">
+      <table id="summaryTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Programme</th>
+            <th>Year</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <button id="backToFormBtn">Back to Registration</button>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
